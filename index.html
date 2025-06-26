@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinhar Meu Número</title>
+    <link rel="stylesheet" href="fonts/remixicon.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+  <body>
+    <section id="container">
+      <!--Botão de Adicional Valores-->
+      <div class="navbar">
+        <div class="btns">
+          <a href="img/termos.pdf" target="_blank">
+            <button class="btn btnChat">
+              <i class="ri-question-fill ri-2x"></i>
+            </button>
+          </a>
+          <a href="img/termos.pdf" target="_blank">
+            <button class="btn btnChat">
+              <i class="ri-file-text-fill ri-2x"></i>
+            </button>
+          </a>
+          <button class="btn btnChat">
+            <i class="ri-chat-new-fill ri-2x"></i>
+          </button>
+        </div>
+        <div class="tile">
+          <img src="img/logoTipo.png" style="width: 400px; height: 80px;" alt="logoMarca">
+         
+        </div>
+        <!--Placar dos valores-->
+        <div class="placaManey">
+          <p>Saldo Actual</p>
+          <div class="globalManey maney1"><span class="saldo1">0.00</span> Kz</div>
+          <p>Saldo Ganho</p>
+          <div class="globalManey maney2"><span class="saldo2">0.00</span> Kz</div>
+        </div>
+      </div>
+     
+      <div class="content">
+        <!--Div sobre deposito e Estatistica de jogo-->
+        <div class="game">
+         <div class="numberGuess">
+          <label for="guessNumber">Coloca seu número de sorte(1 -20)</label><br>
+          <input type="number"  id="guessNumber"> <br><br>
+          <button class="btn btnGuess" onclick="numberGuess(this)">
+            <p>🎲Adivinhar</p>
+          </button> 
+         </div>
+         <!--div Adicionar valores-->
+         <div class="addmaney">
+          <form action="" id="formAddValue">
+            <h4>Adicionar o Valor depositado</h4>
+            <input type="text" id="name"  class="inputsAd" placeholder="Digite seu nome" required> <br> 
+            <input type="number" id="maney" class="inputsAd"  placeholder="Digite o valor" required> <br>
+            <input type="file" name="arquivo" id="file" class="inputsAd" required><br>
+            <button class="btn btnConfirmation">
+              <p>Adicionar Saldo</p>
+              <i class="ri-add-circle-line"></i>
+            </button> 
+          </form>
+
+          <div class="progress">
+            <h4>Painel de Estátistica</h4>
+            <p>🎯Tentativas Usadas:<span class="font-size TotaDeTentativa">0</span></p>
+            <p>🕓Tempo Decorridos:<span class="font-size Tempo">0s</span></p>
+            <p>🧠Precisão-Executar:<span class="font-size precisao">0%</span></p>
+          </div>
+        </div>
+           <div class="btns1">
+            <button class="btn btnReiniciar" onclick="reiniciarJogo(this)">
+              <p>Reiniciar o jogo</p>
+              <i class="ri-refresh-line"></i>
+            </button> 
+            <button class="btn btnColetarPontos">
+              <p>Coletar Pontos</p>
+              <i class="ri-gift-line"></i>
+            </button> 
+           </div>
+        </div>
+
+       
+        <div class="placar">
+          <h4 id="title">Estado do Jogo</h4>
+          <div class="status">
+
+            <div class="statusGame">
+              <div class="tentativasRestante"><h5>Tentativas Restantes</h5></div>
+              <div class="stutosActual"><h5>Resultado Actual</h5></div>
+              <div class="tentativasRestante contagem">10</div>
+              <div class="stutosActual resultado" >Sem resultado</div>
+            </div>
+
+            <div class="pontoAcumulados">
+              <h4>Pontos Acumulados</h4>
+              <h2><span class="pontos">0</span></h2>
+            </div>
+          </div>
+
+          <div class="btns1 btnValores1">
+            <button class="btn btnInformation" onclick="informationPerson(this)">
+              <p>Informações</p>
+              <i class="ri-user-line ri-2x"></i>
+            </button> 
+            <button class="btn btnLevantarValores"  onclick="levantarValores(this)"> 
+              <p>Levantar Valores</p>
+              <i class="ri-money-dollar-circle-line ri-2x"></i>
+            </button> 
+           </div>
+
+         <div id="formSacar" class="hidden">
+          <h4>Levantar Dinheiro</h4>
+              <form action="">
+                <input type="text" id="fullName" placeholder="Nome completo" required> <br> 
+                <input type="number" id="maneyIban" placeholder="IBAN" required> <br>
+                <input type="number" id="valorALevantar" placeholder="Valor" required ><br>
+                <input type="tel" id="tel" placeholder="Telefone" required ><br>
+                <button class="btn btnValor">
+                  <p>Confirmar</p>
+                  <i class=""></i>
+                </button> 
+              </form>
+         </div>
+        
+         <div id="informationPersona" class="hidden">
+          <h4 class="mgTitle">Informação Pessoal</h4>
+            <div class="persona">
+              <h6>Nome</h6>
+              <div class="fullName py"><p>Aguinaldo Muca Figueira</p></div>
+              <h6>IBAN</h6>
+              <div class="NumberIban py"><p>AO6 0004 0000 0000 0000 000000</p></div>
+              <h6>Telefone</h6>
+              <div class="phoneNumber py">244 9xxxxxxxxxxx</div>
+            </div>
+         </div>
+        </div>
+      </div>
+    </section>
+    <script src="java/app.js"></script>
+  </body>
+</html>
